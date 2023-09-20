@@ -23,7 +23,7 @@
         POST -> envia dados e não exibe na URL
      -->
 
-    <form action="contato.php" method="get">
+    <form action="contato.php" method="get" autocomplete="off">
 
         <!-- 
             para o click no label selecionar o campo o valor de for
@@ -68,6 +68,45 @@
         <!-- input para selecionar cor -->
         <input type="color" name="cor">
         <br><br>
+
+        <!-- TEXTAREA, CAMPO PARA TEXTO LONGO, ELE PERMITE QUEBRA DE LINHA -->
+        <textarea name="texto" cols="50" rows="11" placeholder="Digite um texto"></textarea>
+        <br><br>
+        <!-- data list - lista de dados -->
+        <input type="text" name="listaDados" list="lista">
+        <datalist id="lista">
+            <option value="item1">Item 1</option>
+            <option value="item2">Item 2</option>
+            <option value="item3">Item 3</option>
+        </datalist>
+        <br><br>
+        <!-- checkbox lista de dados onde posso marcar vários itens -->
+        <input type="checkbox" name="cores[]" id="vermelho" value="Vermelho"> <label for="vermelho">Vermelho</label>
+        <input type="checkbox" name="cores[]" id="amarelo" value="Amarelo"> <label for="amarelo">Amarelo</label>
+        <input type="checkbox" name="cores[]" id="verde" value="Verde"> <label for="verde">Verde</label>
+
+        <br><br>
+
+        <!-- radio permite a marcação de apenas um item da lista, desde que o name deles sejam iguais -->
+        
+        <!-- name - parametro | value = valor // liquido=agua -->
+        <input type="radio" name="liquido" value="agua" id="agua"> <label for="agua">Água</label>
+        <input type="radio" name="liquido" value="cerveja" id="cerveja"> <label for="cerveja">Cerveja</label>
+        <input type="radio" name="liquido" value="cafe" id="cafe"> <label for="cafe">Café</label>
+
+        <br><br>
+
+        <label for="">Campo com valor fixo</label>
+        <!-- 
+            value"valor" -> preenche um valor padrão
+            required -> marca o campo como obrigatório
+            readonly -> apenas leitura (o campo é enviado)
+            disable -> desabilita o campo (o campo não é enviado no formulário)
+         -->
+        <input type="text" name="teste1" value="Valor fixo" required disabled>
+        <br><br>
+
+
         <!-- campo submit -->
         <button type="submit">ENVIO COM BUTTON</button>
 
